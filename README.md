@@ -1,2 +1,2 @@
-# favestreams
+# FaveStreams
 Favorite Streams

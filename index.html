@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FaveStreams</title>
+	<meta name="description" content="Favorite Streams">
+	<meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="//www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="assets/style.css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosanskr.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="assets/favicon.png">
+	<link rel="apple-touch-icon" href="assets/favicon.png">
+</head>
+<body>
+    <header id="header" class="w3-top">
+        <div id="headerCenter" style="font-size:22px">
+            <div class="w3-left">
+                <a href="" class="w3-button gray-hover w3-padding-8">
+                    <img id="logoImg" style="width:21px" src="assets/favicon.png" alt="logo">
+                    <b id="logo" class="Cafe24Dongdong">FaveStreams</b>
+                </a>
+            </div>
+            <div class="w3-right">
+                <a class="w3-button gray-hover w3-padding-9" id="settingBtn">
+                    <i class="fa fa-cog"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="w3-content" id="mainContent">
+        <div id="clipWrap" class="w3-row-padding">
+        </div>
+    </div>
+    <div id="settingModal" class="w3-card-4 w3-animate-opacity-fast">
+        <div style="min-height:calc(100% - 78px)">
+            <a id="closeSettingModal">
+                <i class="fa fa-times"></i>
+            </a>
+            <div class="settingModalTitle">
+                설정
+                <div class="settingModalTitleRight">
+                    <a id="resetBtn" title="등록 채널 초기화">
+                        <i class="fa fa-repeat"></i>
+                    </a>
+                    <a id="copyBtn" title="등록아이디 리스트 복사">
+                        <i class="fa fa-files-o"></i>
+                    </a>
+                    <a id="helpBtn" title="도움말">
+                        <i class="fa fa-question-circle"></i>
+                    </a>
+                </div>
+            </div>
+            <form id="regForm" name="regForm" method="get" autocomplete="off" onsubmit="return false;">
+                <div style="display:inline-block;width:79.8888%;padding-right:7px">
+                    <input required type="search" name="streamerId" id="streamerId" pattern="[A-Za-z0-9_,]{4,2500}" title="영어,숫자,언더바,쉼표만 / 4자이상" placeholder=" 스트리머 아이디" class="w3-input w3-border searchTerm">
+                </div>
+                <div style="display:inline-block;width:18.8888%">
+                    <button type="submit" id="regBtn" class="w3-btn w3-block w3-hover-light-opacity w3-dark-purple">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </form>
+            <div id="favList"></div>
+        </div>
+        <div class="settingModalFooter">
+            Made By Ardor
+        </div>
+    </div>
+    <textarea id="idListArea" readonly></textarea>
+    <div id="overlay" class="w3-overlay w3-animate-opacity-fast"></div>
+    <i id="loadingSpinner"></i>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
